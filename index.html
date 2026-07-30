@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>郭欣 Ella Guo — 高端儿童伴学师简历</title>
+<style>
+  :root {
+    --primary: #2c3e7b;
+    --primary-light: #eef1fb;
+    --gold: #b8943e;
+    --text: #2d2d2d;
+    --text-secondary: #5a5a5a;
+    --text-muted: #888;
+    --bg: #f5f5f7;
+    --card: #ffffff;
+    --border: #e8e8ed;
+    --radius: 14px;
+    --shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.65; font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 480px; margin: 0 auto; padding: 0 0 40px; }
+
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #1a2744 0%, #2c3e7b 40%, #3b5998 100%);
+    color: #fff; padding: 36px 24px 30px; text-align: center;
+  }
+  .header .name { font-size: 26px; font-weight: 700; letter-spacing: 2px; }
+  .header .name .en { font-weight: 300; font-size: 18px; opacity: 0.85; }
+  .header .title { font-size: 14px; opacity: 0.9; margin-top: 8px; }
+
+  /* Contact Bar */
+  .contact-bar {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6px 10px;
+    padding: 16px 18px; background: var(--card); margin: 12px 16px 0;
+    border-radius: var(--radius); box-shadow: var(--shadow); font-size: 13px; color: var(--text-secondary);
+  }
+  .contact-bar .item { display: flex; align-items: center; gap: 5px; padding: 5px 10px; background: var(--bg); border-radius: 8px; }
+  .contact-bar .item.full { grid-column: 1 / -1; }
+  .contact-bar .icon { font-size: 15px; flex-shrink: 0; }
+
+  /* Sections */
+  .section { margin: 16px; padding: 20px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); }
+  .section-title { font-size: 17px; font-weight: 700; color: var(--primary); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .section-title .icon { width: 32px; height: 32px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+  .section-title .en { flex-basis: 100%; font-weight: 400; font-size: 11px; color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase; margin-top: 1px; }
+
+  /* Summary */
+  .summary-text { font-size: 14px; color: var(--text-secondary); line-height: 1.8; }
+  .summary-en { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border); font-size: 12.5px; color: var(--text-muted); line-height: 1.7; font-style: italic; }
+
+  /* Competency Cards */
+  .comp-card { padding: 14px; margin-bottom: 10px; background: var(--bg); border-radius: 10px; border-left: 4px solid var(--primary); }
+  .comp-card .comp-title { font-weight: 600; font-size: 14px; color: var(--primary); margin-bottom: 4px; }
+  .comp-card .comp-text { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+  .comp-card .comp-en { font-size: 12px; color: var(--text-muted); margin-top: 4px; font-style: italic; }
+
+  /* Timeline */
+  .timeline-item { position: relative; padding-left: 20px; padding-bottom: 20px; border-left: 2px solid var(--border); }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-item::before { content: ''; position: absolute; left: -6px; top: 4px; width: 10px; height: 10px; background: var(--primary); border-radius: 50%; }
+  .timeline-item .t-date { font-size: 12px; color: var(--gold); font-weight: 600; margin-bottom: 4px; }
+  .timeline-item .t-role { font-weight: 600; font-size: 14px; margin-bottom: 6px; }
+  .timeline-item .t-detail { font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 4px; }
+
+  /* Cert List */
+  .cert-item { display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: var(--bg); border-radius: 8px; font-size: 13px; margin-bottom: 6px; }
+  .cert-item .dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+
+  /* Q&A */
+  .qa-block { margin-bottom: 16px; }
+  .qa-block .question { font-weight: 700; font-size: 15px; color: var(--primary); margin-bottom: 8px; padding: 10px 14px; background: var(--primary-light); border-radius: 8px; }
+  .qa-block .answer { font-size: 13.5px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 8px; }
+  .qa-block .answer p { margin-bottom: 6px; }
+
+  /* Images — clickable link, opens image directly */
+  .img-link {
+    display: block; margin: 12px 0; border-radius: 10px; overflow: hidden;
+    border: 1px solid var(--border); text-decoration: none; color: inherit;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .img-link img { width: 100%; height: auto; display: block; }
+  .img-caption { font-size: 12px; color: var(--text-muted); text-align: center; padding: 6px; background: var(--bg); }
+
+  /* Video link — opens video in native player */
+  .video-link {
+    display: block; margin: 12px 0; border-radius: 10px; overflow: hidden;
+    background: #0a0a1a; border: 1px solid var(--border); text-decoration: none;
+    position: relative; -webkit-tap-highlight-color: transparent;
+  }
+  .video-link-preview {
+    width: 100%; height: 180px; display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 10px;
+  }
+  .video-link-preview .play-icon {
+    width: 56px; height: 56px; background: rgba(255,255,255,0.9); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .video-link-preview .play-icon::after {
+    content: ''; width: 0; height: 0;
+    border-left: 18px solid var(--primary);
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+    margin-left: 3px;
+  }
+  .video-link-label { color: #fff; font-size: 14px; font-weight: 600; }
+  .video-link-hint { color: #aaa; font-size: 11px; }
+  .video-label { text-align: center; font-size: 13px; font-weight: 600; color: var(--text-secondary); margin-bottom: 2px; }
+
+  /* Cert gallery */
+  .cert-gallery { display: grid; gap: 12px; }
+  .cert-link {
+    display: block; border-radius: 10px; overflow: hidden;
+    border: 1px solid var(--border); background: var(--card);
+    text-decoration: none; color: inherit; -webkit-tap-highlight-color: transparent;
+  }
+  .cert-link img { width: 100%; height: auto; display: block; }
+  .cert-link-label { font-size: 12px; color: var(--text-secondary); text-align: center; padding: 8px; font-weight: 600; }
+  .cert-link-hint { font-size: 11px; color: var(--text-muted); text-align: center; padding-bottom: 8px; }
+
+  /* Footer */
+  .footer { text-align: center; padding: 20px; color: var(--text-muted); font-size: 12px; }
+
+  /* Highlight */
+  .highlight { background: linear-gradient(180deg, transparent 60%, #fdf6e8 60%); padding: 0 2px; }
+  .tag { display: inline-block; padding: 2px 8px; background: var(--primary-light); color: var(--primary); border-radius: 4px; font-size: 12px; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ═══ HEADER ═══ -->
+  <div class="header">
+    <div class="name">郭 欣 <span class="en">/ Ella Guo</span></div>
+    <div class="title">求职意向：高端儿童伴学师 / 幼儿心理与认知启蒙导师</div>
+  </div>
+
+  <!-- ═══ CONTACT ═══ -->
+  <div class="contact-bar">
+    <span class="item"><span class="icon">📱</span> 156-0184-6178</span>
+    <span class="item"><span class="icon">✉️</span> 529657972@qq.com</span>
+    <span class="item"><span class="icon">📍</span> 上海 · 随时到岗</span>
+    <span class="item"><span class="icon">🎂</span> 38岁 · 属兔</span>
+    <span class="item full"><span class="icon">🏠</span> 可住家</span>
+  </div>
+
+  <!-- ═══ EXECUTIVE SUMMARY ═══ -->
+  <div class="section">
+    <div class="section-title"><span class="icon">📋</span>个人简介<span class="en">Executive Summary</span></div>
+    <div class="summary-text">
+      吉林师范大学心理学本科，持有国家三级心理咨询师及教师资格证。具备 <strong>7 年</strong>知名合资企业工作的职业素养与 <strong>5 年</strong>儿童早期发展实操经验。深谙儿童发展心理学，熟悉国际教育理念，致力于通过科学的心理学方法在日常陪伴中提升孩子的核心认知力、情绪调节力与自主内驱力。熟练驾驶，职业界限感强，隐私意识极佳。
+    </div>
+    <div class="summary-en">
+      Bachelor's in Psychology with National Level-3 Psychological Counselor & Teaching Certificates. Combines 7 years of experience in SAIC-GMAC with 5 years of practical early childhood development experience. Expertise in applying developmental psychology and international education practices to enhance cognitive skills, emotional regulation, and self‑motivation. Skilled driver with strong professional boundaries and strict confidentiality standards.
+    </div>
+  </div>
+
+  <!-- ═══ CORE COMPETENCIES ═══ -->
+  <div class="section">
+    <div class="section-title"><span class="icon">⭐</span>服务亮点与胜任力<span class="en">Core Competencies</span></div>
+    <div class="comp-card">
+      <div class="comp-title">1. 行为塑造与情绪管理 (PBS)</div>
+      <div class="comp-text">拒绝强制约束，善用正向行为引导（PBS）。帮助孩子建立边界感与自控力，妥善应对情绪波动、拖延与规则建立。</div>
+      <div class="comp-en">Apply Positive Behavior Support (PBS) to cultivate boundaries, self-control, and healthy emotional regulation.</div>
+    </div>
+    <div class="comp-card">
+      <div class="comp-title">2. 专注力与认知游戏化</div>
+      <div class="comp-text">将专注力、记忆力、逻辑思维及感统训练自然融入日常游戏与活动，拒绝枯燥填鸭，实现<span class="highlight">"玩中学"</span>。</div>
+      <div class="comp-en">Integrate focus, memory, logic, and sensory integration training seamlessly into gamified learning activities.</div>
+    </div>
+    <div class="comp-card">
+      <div class="comp-title">3. 基础英语阅读启蒙</div>
+      <div class="comp-text">独立开展英文绘本分级阅读、互动故事会及基础词汇积累，激发孩子对外语的学习兴趣与自然语感。</div>
+      <div class="comp-en">Guide graded English reading (RAZ/Oxford Reading Tree), interactive storytelling, and vocabulary building.</div>
+    </div>
+    <div class="comp-card">
+      <div class="comp-title">4. 成长跟踪与家企高效共育</div>
+      <div class="comp-text">定期为孩子制定阶段性成长评估，向家长同步育儿反馈；恪守家庭职业边界与隐私规范。</div>
+      <div class="comp-en">Deliver structured growth assessments and transparent updates while strictly respecting family privacy.</div>
+    </div>
+  </div>
+
+  <!-- ═══ WORK EXPERIENCE ═══ -->
+  <div class="section">
+    <div class="section-title"><span class="icon">💼</span>工作与实践经历<span class="en">Work & Practical Experience</span></div>
+    <div class="timeline-item">
+      <div class="t-date">2021.01 – 至今</div>
+      <div class="t-role">全职妈妈 — 儿童早期发展与认知启蒙实操</div>
+      <div class="t-detail">• <strong>学术与数学思维启蒙：</strong>引入袋鼠数学理念与明珠数学体系，引导掌握百位加减法，建立良好数感、逻辑与空间思维。<br><span style="color:var(--text-muted);font-size:12px;">Introduced Bebras/Math Kangaroo concepts to build 3-digit mental arithmetic, logic, and spatial reasoning.</span></div>
+      <div class="t-detail">• <strong>中英双语分级阅读：</strong>英文完成 RAZ D级、牛津树及游美阅读构建；中文推进《小羊上山》6级阅读，培养自主阅读习惯。<br><span style="color:var(--text-muted);font-size:12px;">Facilitated bilingual literacy: reached RAZ Level D & Oxford Tree in English; completed Level 6 Chinese reading.</span></div>
+      <div class="t-detail">• <strong>国际化教育衔接与健康管理：</strong>深度匹配国际幼儿园体系，培养良好课堂习惯；<strong>具备过敏体质儿童（敏宝）精细化膳食规划与健康照护经验。</strong><br><span style="color:var(--text-muted);font-size:12px;">Aligned learning with international kindergarten standards; experienced in diet & health management for allergy-prone children.</span></div>
+    </div>
+    <div class="timeline-item">
+      <div class="t-date">2014.04 – 2021.01</div>
+      <div class="t-role">上汽通用汽车金融有限责任公司 | Senior C&B Specialist</div>
+      <div class="t-detail">• <strong>职业素养与可迁移能力：</strong>汽车金融头部中美合资企业，被誉为汽车金融业的<span class="highlight">"黄埔军校"</span>。具备严谨的目标拆解、进度跟进与结果反馈机制，保密意识与信息安全素养极高。<br><span style="color:var(--text-muted);font-size:12px;">The premier auto finance powerhouse, known as the industry's ultimate talent incubator. Developed strong skills in goal breakdown, progress tracking, and strict confidentiality.</span></div>
+    </div>
+  </div>
+
+  <!-- ═══ EDUCATION ═══ -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🎓</span>教育背景<span class="en">Education</span></div>
+    <div style="font-size:14px;font-weight:600;">吉林师范大学 | 心理学 本科</div>
+    <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">2006 – 2010 &nbsp;|&nbsp; Jilin Normal University | B.S. in Psychology</div>
+  </div>
+
+  <!-- ═══ CERTIFICATES & SKILLS ═══ -->
+  <div class="section">
+    <div class="section-title"><span class="icon">📜</span>专业证书与技能<span class="en">Certificates & Skills</span></div>
+    <div class="cert-item"><span class="dot"></span> <strong>资质证书：</strong>国家三级心理咨询师 | 教师资格证 | 普通话二级甲等</div>
+    <div class="cert-item"><span class="dot"></span> <strong>语言能力：</strong>大学英语四级 (CET-4)，具备熟练的英文分级伴读</div>
+    <div class="cert-item"><span class="dot"></span> <strong>综合技能：</strong>熟练驾驶（可安全接送）| 全国计算机等级二级 (C语言)</div>
+  </div>
+
+  <!-- ═══ SELF-INTRODUCTION ═══ -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🎤</span>自我介绍<span class="en">Self-introduction</span></div>
+
+    <div class="video-label">📹 自我介绍视频</div>
+    <div class="video-card">
+      <video src="videos/video1.mp4" preload="metadata" playsinline webkit-playsinline controls controlslist="nodownload" style="width:100%;display:block;border-radius:10px;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+      <p style="color:#fff;text-align:center;padding:30px;">视频无法加载</p>
+    </video>
+    <div style="display:none;background:#0a0a1a;border-radius:10px;padding:24px;text-align:center;margin-top:-10px;">
+      <p style="color:#ff9800;font-weight:600;font-size:14px;">⚠️ 当前浏览器不支持播放</p>
+      <p style="color:#ccc;font-size:12px;margin-top:8px;">请用 <strong>Chrome 浏览器</strong> 打开此页面</p>
+      <p style="color:#999;font-size:11px;margin-top:4px;">或打开 videos 文件夹播放 video1.mp4</p>
+    </div>
+      </video>
+    </div>
+  </div>
+
+  <!-- ═══ Q&A ═══ -->
+  <div class="section">
+    <div class="section-title"><span class="icon">💬</span>问答<span class="en">Q&A</span></div>
+
+    <!-- Q1 -->
+    <div class="qa-block">
+      <div class="question">Q1：心理学对育儿有哪些切实的帮助？</div>
+      <div class="answer">
+        <p><strong>A：</strong>心理学能帮我们"透过现象看懂大脑"，摆脱盲目的题海战术，做有针对性的底层能力培养。</p>
+        <p>以这道 2022 年袋鼠数学 Level A 的真题为例：当 4-5 岁的孩子做不出这道题时，心理学能帮我们精准定位他背后的认知卡点——</p>
+        <p><strong>视知觉完形与局部认知：</strong>仔细观察就会发现，4-5 岁孩子的视觉加工天然偏向"局部优先"（比如画田字格时，他们往往是一格一格拼，而不是先画大框）。面对被墨水覆盖的网格，他们很难在脑海中自动"完形"并脑补出隐藏的线条。</p>
+        <p><strong>逆向思维与灵活策略：</strong>孩子盲目数墨水块极易漏数，而这道题真正的破局点在于<strong>"正难则反"</strong>——用大网格总数（24个）减去周围明显的空白格（4个）。这考验的是大脑的逆向推理力。</p>
+        <p>我们的目的不是把这道题做对，而是<strong>检测孩子发展的窗口</strong>。看懂了背后的心理学机制，我们就能摒弃枯燥训练，在日常中通过游戏（如"倒走迷宫"、"图形分割"、"吃蛋糕剔除游戏"）精准引导，顺理成章地开启孩子底层能力的大门。</p>
+      </div>
+      <div class="img-link">
+        <img src="media/image5.png" loading="lazy">
+        <div class="img-caption">📷 袋鼠数学 Level A 真题示例（长按可保存/分享图片）</div>
+</div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="qa-block">
+      <div class="question">Q2：关于培养规划的一些想法。</div>
+      <div class="answer">
+        <p>下面这张图节选自《儿心量表》。刚当妈妈时，我也常想：怎样才算一个"好妈妈"？育儿是不是也像职场工作一样，存在一份客观的 KPI？</p>
+        <p>但一路走来，我的体会是：育儿不能套用管理下属的逻辑——我们无法强制孩子必须做到什么，必须拿到怎样的"成果"。然而，项目管理的思维依然可以为育儿赋能。我们可以把对孩子的期待，转化为对自己的目标与行动指南。在这个过程中，运用科学、恰当的方法去引导和支持孩子，让他们朝向美好的方向生长。</p>
+        <p><strong>成长的目标的压力是在陪伴师和家长身上的，而发展的自由在孩子脚下。</strong>期待而不强求，指导而不包办。最终，我依然希望他们能自在地探索世界，找到自己、成为自己。</p>
+        <p>有了方向，接下来的核心就在于"如何落地"：我们需要做的，是结合孩子的实际情况，设计适配的引导方法，帮他们顺畅地跨越到下一个成长节点。在这条路上，带着目标去计划，跟着反馈去复盘，不断优化方法，与孩子一起稳步前行。</p>
+      </div>
+      <div class="img-link">
+        <img src="media/image6.png" loading="lazy">
+        <div class="img-caption">📷 《儿心量表》儿童发展参考框架（长按可保存/分享图片）</div>
+</div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="qa-block">
+      <div class="question">Q3：AI工具在育儿中的应用</div>
+      <div class="answer">
+        <p>AI工具也会给我们带娃带来一些启发，这个过程可以和小朋友一起<strong>共创</strong>。</p>
+        <p>以下是识字卡片的制作，用小朋友喜欢的元素，加上简短的小故事。使用的工具是 <span class="tag">Gemini</span>。</p>
+        <p>目前实践的经验是和4岁的小朋友共创过，通过语音输入法来实现，生成的材料然后会打印出来。</p>
+        <p>我们可以为孩子建立一个专属的<strong>"汉字小金库"</strong>。每次做阅读材料时，把孩子已经认识的字（已知区）作为基底，再像搭积木一样，微量加入几个新字（新知区）。这样定制出来的故事，孩子一读就能读懂大半，既不会觉得难，又能自然而然学会新字。这种低挫败、高成就感的阶梯式阅读，不仅能保护孩子的学习自信，还能让他们真正爱上自主阅读！</p>
+      </div>
+
+      <div class="img-link">
+        <img src="media/image7.png" loading="lazy">
+        <div class="img-caption">📷 AI 生成识字卡片示例（长按可保存/分享图片）</div>
+</div>
+
+      <div class="img-link">
+        <img src="media/image8.png" loading="lazy">
+        <div class="img-caption">📷 汪汪队主题识字漫画卡（长按可保存/分享图片）</div>
+</div>
+
+      <div class="answer" style="margin-top:10px;">
+        <p><strong>为什么要做这个尝试呢？</strong></p>
+        <p>最初带小朋友识字时，单纯刷字卡他觉得枯燥，即便是市面上很火的《小羊上山》分级读物，也并不是每本都能踩中他的兴趣点。</p>
+        <p>后来我换了个思路：以他最爱的<strong>"汪汪队"</strong>为主角，把汉字嵌入故事情节，自制成漫画卡。效果出乎意料的好！</p>
+        <p>这种方式还有一个天然的优势——特别适合形近字（如：跑、抱、泡）的串联学习。把结构相似的字放在同一个故事里，孩子能自然分辨差异，识字量呈爆发式增长。</p>
+        <p>其实，培养孩子的阅读兴趣，本质上就靠两样东西：一是<strong>对未知世界的好奇心</strong>，二是<strong>"我能读懂"的自信心</strong>。用他喜欢的元素做桥梁，正好完美兼顾了这两点。</p>
+        <p>关于屏幕的使用问题，我的建议是每天控制在<strong>20分钟以内</strong>，同时要增强户外活动。如果家长比较介意屏幕的问题，可以遵循家长的想法，把生成的材料打印出来给小朋友学习。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ 互动视频 ═══ -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🎬</span>互动视频展示<span class="en">Interaction Videos</span></div>
+    <p style="font-size:13px;color:var(--text-secondary);margin-bottom:14px;">以下是和小朋友的互动视频（年龄：4岁半），点击即可播放：</p>
+
+    <div class="video-label">📹 互动视频 ①</div>
+    <div class="video-card">
+      <video src="videos/video2.mp4" preload="metadata" playsinline webkit-playsinline controls controlslist="nodownload" style="width:100%;display:block;border-radius:10px;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+      <p style="color:#fff;text-align:center;padding:30px;">视频无法加载</p>
+    </video>
+    <div style="display:none;background:#0a0a1a;border-radius:10px;padding:24px;text-align:center;margin-top:-10px;">
+      <p style="color:#ff9800;font-weight:600;font-size:14px;">⚠️ 当前浏览器不支持播放</p>
+      <p style="color:#ccc;font-size:12px;margin-top:8px;">请用 <strong>Chrome 浏览器</strong> 打开此页面</p>
+      <p style="color:#999;font-size:11px;margin-top:4px;">或打开 videos 文件夹播放 video2.mp4</p>
+    </div>
+      </video>
+    </div>
+
+    <div class="video-label" style="margin-top:16px;">📹 互动视频 ②</div>
+    <div class="video-card">
+      <video src="videos/video3.mp4" preload="metadata" playsinline webkit-playsinline controls controlslist="nodownload" style="width:100%;display:block;border-radius:10px;"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+      <p style="color:#fff;text-align:center;padding:30px;">视频无法加载</p>
+    </video>
+    <div style="display:none;background:#0a0a1a;border-radius:10px;padding:24px;text-align:center;margin-top:-10px;">
+      <p style="color:#ff9800;font-weight:600;font-size:14px;">⚠️ 当前浏览器不支持播放</p>
+      <p style="color:#ccc;font-size:12px;margin-top:8px;">请用 <strong>Chrome 浏览器</strong> 打开此页面</p>
+      <p style="color:#999;font-size:11px;margin-top:4px;">或打开 videos 文件夹播放 video3.mp4</p>
+    </div>
+      </video>
+    </div>
+  </div>
+
+  <!-- ═══ CERTIFICATE IMAGES ═══ -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🏆</span>证书展示<span class="en">Certificates</span></div>
+
+    <div class="cert-gallery">
+      <div class="cert-link">
+        <div class="cert-link-label">国家三级心理咨询师证书</div>
+        <img src="media/image11.png" loading="lazy">
+        <div class="cert-link-hint">长按可保存/分享图片</div>
+</div>
+      <div class="cert-link">
+        <div class="cert-link-label">毕业证 & 学位证</div>
+        <img src="media/image12.png" loading="lazy">
+        <div class="cert-link-hint">长按可保存/分享图片</div>
+</div>
+      <div class="cert-link">
+        <div class="cert-link-label">教师资格证书</div>
+        <img src="media/image13.png" loading="lazy">
+        <div class="cert-link-hint">长按可保存/分享图片</div>
+</div>
+    </div>
+  </div>
+
+  <!-- ═══ FOOTER ═══ -->
+  <div class="footer">
+    郭欣 Ella Guo · 高端儿童伴学师<br>
+    156-0184-6178 · 529657972@qq.com
+  </div>
+
+</div>
+
+</body>
+</html>
