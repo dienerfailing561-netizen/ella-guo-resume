@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="referrer" content="no-referrer">
 <title>郭欣 Ella Guo — 高端儿童伴学师简历</title>
 <style>
   :root {
@@ -146,9 +149,10 @@
   <div class="contact-bar">
     <span class="item"><span class="icon">📱</span> 156-0184-6178</span>
     <span class="item"><span class="icon">✉️</span> 529657972@qq.com</span>
-    <span class="item"><span class="icon">📍</span> 上海 · 随时到岗</span>
+    <span class="item"><span class="icon">📍</span> 上海户口（籍贯吉林）</span>
+    <span class="item"><span class="icon">📅</span> 随时到岗</span>
     <span class="item"><span class="icon">🎂</span> 38岁 · 属兔</span>
-    <span class="item full"><span class="icon">🏠</span> 可住家</span>
+    <span class="item"><span class="icon">🏠</span> 可住家</span>
   </div>
 
   <!-- ═══ EXECUTIVE SUMMARY ═══ -->
@@ -192,7 +196,7 @@
     <div class="section-title"><span class="icon">💼</span>工作与实践经历<span class="en">Work & Practical Experience</span></div>
     <div class="timeline-item">
       <div class="t-date">2021.01 – 至今</div>
-      <div class="t-role">全职妈妈 — 儿童早期发展与认知启蒙实操</div>
+      <div class="t-role">5岁男孩子--敏宝 — 儿童早期发展与认知启蒙实操</div>
       <div class="t-detail">• <strong>学术与数学思维启蒙：</strong>引入袋鼠数学理念与明珠数学体系，引导掌握百位加减法，建立良好数感、逻辑与空间思维。<br><span style="color:var(--text-muted);font-size:12px;">Introduced Bebras/Math Kangaroo concepts to build 3-digit mental arithmetic, logic, and spatial reasoning.</span></div>
       <div class="t-detail">• <strong>中英双语分级阅读：</strong>英文完成 RAZ D级、牛津树及游美阅读构建；中文推进《小羊上山》6级阅读，培养自主阅读习惯。<br><span style="color:var(--text-muted);font-size:12px;">Facilitated bilingual literacy: reached RAZ Level D & Oxford Tree in English; completed Level 6 Chinese reading.</span></div>
       <div class="t-detail">• <strong>国际化教育衔接与健康管理：</strong>深度匹配国际幼儿园体系，培养良好课堂习惯；<strong>具备过敏体质儿童（敏宝）精细化膳食规划与健康照护经验。</strong><br><span style="color:var(--text-muted);font-size:12px;">Aligned learning with international kindergarten standards; experienced in diet & health management for allergy-prone children.</span></div>
@@ -262,7 +266,7 @@
     <div class="qa-block">
       <div class="question">Q2：关于培养规划的一些想法。</div>
       <div class="answer">
-        <p>下面这张图节选自《儿心量表》。刚当妈妈时，我也常想：怎样才算一个"好妈妈"？育儿是不是也像职场工作一样，存在一份客观的 KPI？</p>
+        <p>下面这张图节选自《儿心量表》。经常想怎样才算是一个好的养育者，育儿是不是也像职场工作一样，存在一份客观的 KPI？</p>
         <p>但一路走来，我的体会是：育儿不能套用管理下属的逻辑——我们无法强制孩子必须做到什么，必须拿到怎样的"成果"。然而，项目管理的思维依然可以为育儿赋能。我们可以把对孩子的期待，转化为对自己的目标与行动指南。在这个过程中，运用科学、恰当的方法去引导和支持孩子，让他们朝向美好的方向生长。</p>
         <p><strong>成长的目标的压力是在陪伴师和家长身上的，而发展的自由在孩子脚下。</strong>期待而不强求，指导而不包办。最终，我依然希望他们能自在地探索世界，找到自己、成为自己。</p>
         <p>有了方向，接下来的核心就在于"如何落地"：我们需要做的，是结合孩子的实际情况，设计适配的引导方法，帮他们顺畅地跨越到下一个成长节点。在这条路上，带着目标去计划，跟着反馈去复盘，不断优化方法，与孩子一起稳步前行。</p>
@@ -369,5 +373,26 @@
 
 </div>
 
+<script>
+// WeChat in-app browser compatibility fix
+(function(){
+  if(navigator.userAgent.indexOf('MicroMessenger') > -1){
+    // Ensure page is fully loaded after WeChat bridge init
+    if(typeof WeixinJSBridge === 'undefined'){
+      document.addEventListener('WeixinJSBridgeReady', function(){
+        document.body.style.display = '';
+      }, false);
+    }
+    // Fallback: reload if page stuck on blank
+    var loaded = false;
+    window.onload = function(){ loaded = true; };
+    setTimeout(function(){
+      if(!loaded && document.body.innerText.trim() === ''){
+        location.reload();
+      }
+    }, 3000);
+  }
+})();
+</script>
 </body>
 </html>
